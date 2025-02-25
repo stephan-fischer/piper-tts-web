@@ -4,37 +4,37 @@ export type FileKey = `${string}/${VoiceId}.onnx` | `${string}/${VoiceId}.onnx.j
 export type Quality = 'low' | 'medium' | 'x_low' | 'high';
 
 export type Voice = {
-  key: VoiceId | string;
-  name: string;
-  language: {
-    code: CountryCode | string;
-    family: string;
-    region: string;
-    name_native: string;
-    name_english: string;
-    country_english: string;
-  };
-  quality: Quality | string;
-  num_speakers: number;
-  speaker_id_map: Record<string, number>;
-  files: {
-    [key: FileKey]: {
-      size_bytes: number;
-      md5_digest: string;
-    }
-  };
-  aliases: string[]
+    key: VoiceId | string;
+    name: string;
+    language: {
+        code: CountryCode | string;
+        family: string;
+        region: string;
+        name_native: string;
+        name_english: string;
+        country_english: string;
+    };
+    quality: Quality | string;
+    num_speakers: number;
+    speaker_id_map: Record<string, number>;
+    files: {
+        [key: FileKey]: {
+            size_bytes: number;
+            md5_digest: string;
+        }
+    };
+    aliases: string[]
 }
 
 export type Progress = {
-  url: string;
-  total: number;
-  loaded: number;
+    url: string;
+    total: number;
+    loaded: number;
 }
 
 export type InferenceConfig = {
-  text: string,
-  voiceId: VoiceId
+    text: string,
+    voiceId: VoiceId
 };
 
 export type ProgressCallback = (progress: Progress) => void;
